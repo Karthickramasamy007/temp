@@ -1,0 +1,13 @@
+apiVersion: networking.k8s.io/v1beata1
+kind: Ingress
+metadata:
+  name: myapp-ingress
+  namespace: default
+spec:
+  rules:
+  - host: localhost
+    http:
+      paths:
+      - backend:
+          serviceName: mongo-express-service
+          servicePort: 8080
